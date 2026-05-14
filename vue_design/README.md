@@ -1,44 +1,68 @@
-# Vue To-Do App
+# List of Dog Breeds
 
-A multi-page todo application built with Vue 3, Vue Router, Pinia, and PrimeVue.
+A Vue 3 app that lets you browse all dog breeds and view a random photo of each one. Built with the Dog CEO API, PrimeVue, and Vue Router.
 
 ## Setup
 
-1. Install dependencies:
+   ** Install dependencies
+   ```bash
+   npm install
+   ```
 
-```bash
-npm install
-```
+   ** Start the development server
+   ```bash
+   npm run dev
+   ```
 
-2. Start the development server:
+   ** Open your browser:
+   - The terminal will display the local URL (`http://localhost:5173`)
+   - Click the link or navigate to it manually
 
-```bash
-npm run dev
-```
-
-3. Open the local URL shown in the terminal, usually:
-
-```bash
-http://localhost:5173
-```
-
-If port 5173 is already in use, Vite will automatically choose another port.
+  ** Usage 
+   - Click **"Show Breeds"** to fetch and display all dog breeds
+   - Click any breed card to view a random image and breed details
+   - Use the **"⬅ Back"** link to return to the breed list
+   - Hover over breed cards to see the lift and glow effect
 
 ## Features
 
-- Vue 3 application built with the Composition API
-- Client-side routing with Vue Router
-- Four main views: Overview, Detail, Add Todo, and About
-- Centralized state management with Pinia
-- Five predefined todos loaded on startup
-- Reusable todo card component
-- Dynamic todo detail page based on todo ID
-- Add Todo form with validation and inline error messages
-- PrimeVue theme integration for modern styling
-- Search and filter controls for the todo overview
-- LocalStorage persistence for saved todos
+**Breed Overview Grid**
+- Display all dog breeds in a responsive grid layout
+- Real-time data fetching from the Dog CEO API
+- PrimeVue Card components with smooth animations
+- Lift and glow hover effects for interactive feel
 
-## Notes
+**Breed Detail Page**
+- View a random image for each breed
+- Session-based image caching (cached per breed during your session)
+- Back navigation with smooth page transitions
+- Loading and error states with PrimeVue ProgressSpinner
 
-- The project is intended to run after `npm install` and `npm run dev`.
-- The build script in `package.json` should be checked if you plan to use `npm run build`.
+**Caching System**
+- In-memory session-level caching for breed list
+- Per-breed image caching to avoid repeated API calls
+- Caches clear on full page refresh
+
+## Project Structure
+
+```
+vue_project/
+├── src/
+│   ├── components/            
+│   │   ├── DogBreeds.vue         # Home - breed overview 
+│   ├── pages/       
+│   │    ├──Breed.vue             # Detail - single breed and image
+│   │    ├──BreedDetail.vue       # API calls and caching
+│   ├── services/
+│   │   └── dogApi.js           
+│   ├── App.vue                 
+│   ├── main.js                 
+│   └── router.js               
+├── public/                     
+├── index.html                  
+├── package.json                
+├── vite.config.js              
+└── jsconfig.json               
+```
+
+
