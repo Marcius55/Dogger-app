@@ -4,6 +4,11 @@ A Vue 3 app that lets you browse all dog breeds and view a random photo of each 
 
 ## Setup
 
+   ** Navigate into the project folder
+   ``` bash
+   cd vue_project
+   ```
+
    ** Install dependencies
    ```bash
    npm install
