@@ -1,0 +1,46 @@
+@use './variables' as *;
+
+:root {
+  --page-bg: #{$bg-primary};
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--page-bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: $text-primary;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 1rem 0;
+  font-weight: 600;
+  color: $text-primary;
+}
+
+p {
+  margin: 0 0 1rem 0;
+  color: $text-secondary;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $blue-primary;
+  border-radius: 6px;
+}
